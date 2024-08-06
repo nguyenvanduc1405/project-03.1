@@ -1,0 +1,117 @@
+@use "../base";
+@use "../abstracts";
+
+%flexItemCenter {
+    display: flex;
+    align-items: center;
+}
+
+.header-fixed {
+    position: sticky;
+    z-index: 2;
+    top: -15px;
+    background-color: #fff;
+    padding-top: 28px;
+
+    @include abstracts.breakpoint(md) {
+        padding-top: 25px;
+    }
+}
+
+.header {
+    &__inner {
+        @extend %flexItemCenter;
+
+        @include abstracts.breakpoint(lg) {
+            justify-content: space-between;
+        }
+
+        @include abstracts.breakpoint(md) {
+            justify-content: flex-start;
+        }
+    }
+
+    &__inner--separate {
+        margin-top: 13px;
+        width: 1140px;
+        height: 1px;
+        flex-shrink: 0;
+        background: linear-gradient(
+            90deg,
+            #fff,
+            #dddcdc51,
+            rgba(212, 212, 212, 0) 99.68%
+        );
+
+        @include abstracts.breakpoint(lg) {
+            display: none;
+        }
+    }
+
+    &__more {
+        display: none;
+        @include abstracts.breakpoint(md) {
+            margin-left: 30px;
+            display: block;
+        }
+    }
+
+    &-action__btn {
+        @include abstracts.breakpoint(md) {
+            --height: 32px;
+            min-width: 92px;
+            color: #fff;
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-left: auto;
+        }
+    }
+}
+
+.logo {
+    @extend %flexItemCenter;
+    gap: 5px;
+    &__title {
+        color: var(--Primary-color-black, #152427);
+        font-family: var(--heading-font);
+        font-size: 1.7rem;
+        font-style: normal;
+        font-weight: 800;
+        line-height: 60px; /* 120% */
+
+        @include abstracts.breakpoint(md) {
+            font-size: 1.4rem;
+        }
+    }
+}
+
+.navbar {
+    margin-left: auto;
+    margin-right: 72px;
+
+    @include abstracts.breakpoint(md) {
+        display: none;
+    }
+
+    @include abstracts.breakpoint(lg) {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    &__list {
+        @extend %flexItemCenter;
+    }
+
+    &__link {
+        padding: 8px 16px;
+        color: #575d5e;
+        font-family: var(--heading-font);
+        font-size: 1.8rem;
+        font-weight: 500;
+        line-height: 1.55;
+
+        &:hover {
+            color: #152427;
+        }
+    }
+}

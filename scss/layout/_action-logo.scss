@@ -1,0 +1,44 @@
+@use "../abstracts";
+
+.action-logo {
+    margin-top: 42px;
+}
+
+.logo__inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 60px;
+    height: 201px;
+    border-radius: 100.5px;
+    background-color: #e2eddf;
+
+    @include abstracts.breakpoint(md) {
+        flex-wrap: wrap;
+        gap: 10px;
+        width: 335px;
+        height: 251px;
+        border-radius: 30px;
+        margin: 0 auto;
+    }
+}
+
+.logo-decor {
+    cursor: pointer;
+
+    &:nth-child(3)::before {
+        content: url("../icons/mask.svg");
+        margin-right: 11px;
+
+        @include abstracts.breakpoint(md) {
+            margin-right: 4px;
+        }
+    }
+
+    &--img {
+        @include abstracts.breakpoint(md) {
+            width: 120px;
+            height: 25px;
+        }
+    }
+}

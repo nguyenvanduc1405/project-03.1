@@ -1,0 +1,138 @@
+@use "../base";
+@use "../abstracts" as ab;
+
+.footer {
+    padding: 72px 0 50px;
+    margin-top: 52px;
+    background-color: #143c3c;
+
+    @include ab.breakpoint(md) {
+        margin-top: 0;
+    }
+
+    &__inner {
+        display: grid;
+        align-items: center;
+        grid-template-columns: 1fr 1fr;
+
+        @include ab.breakpoint(md) {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    &__heading {
+        color: #fff;
+        font-size: 3.2rem;
+        font-weight: 500;
+
+        @include ab.breakpoint(md) {
+            font-size: 2.4rem;
+        }
+    }
+
+    &__input {
+        color: #fff;
+        font-size: 1.6rem;
+        width: 100%;
+        background-color: transparent;
+        padding-bottom: 36px;
+    }
+
+    &__input::placeholder {
+        color: #6a8383;
+        font-size: inherit;
+        font-weight: 600;
+        line-height: 1;
+
+        @include ab.breakpoint(md) {
+            font-size: 2rem;
+            font-weight: 500;
+            line-height: 1.1;
+        }
+    }
+
+    &__submit {
+        padding-bottom: 36px;
+        width: 40px;
+        height: 40px;
+        cursor: pointer;
+    }
+
+    &__list {
+        justify-self: flex-end;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 50px;
+    }
+
+    &__separate {
+        margin-top: 45px;
+        height: 1px;
+        background: linear-gradient(
+            90deg,
+            #143c3c 0.28%,
+            #295a5a55 0.65%,
+            rgba(38, 82, 82, 0) 102.06%
+        );
+    }
+}
+
+.footer-form {
+    margin-top: 25px;
+    display: flex;
+    width: 354px;
+    border-bottom: 1.5px solid #6a8383;
+
+    @include ab.breakpoint(md) {
+        width: 100%;
+    }
+}
+
+.footer-group {
+    margin-top: 47px;
+    display: flex;
+    align-items: center;
+    gap: 22px;
+
+    &__icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        border: 1px solid #265252;
+        cursor: pointer;
+    }
+
+    &__icon:hover {
+        background-color: #a75325;
+    }
+}
+
+.footer-right {
+    justify-self: flex-end;
+
+    @include ab.breakpoint(md) {
+        display: none;
+    }
+
+    &__heading {
+        color: #fff;
+        font-size: 1.8rem;
+        font-weight: 500;
+        line-height: 1.55;
+        margin-bottom: 6px;
+    }
+
+    &__link {
+        color: #6a8383;
+        font-size: 1.6rem;
+        font-weight: 500;
+        line-height: 2.25;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}

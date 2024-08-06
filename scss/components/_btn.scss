@@ -1,0 +1,23 @@
+@use "../base";
+@use "../abstracts";
+.btn {
+    display: inline-block;
+    --height: 57px;
+    min-width: 173px;
+    height: var(--height);
+    line-height: var(--height);
+    border-radius: 99px;
+    background: var(--btn-color);
+    color: var(--text-color-white, #fff);
+    text-align: center;
+    font-family: var(--heading-font);
+    font-size: 1.8rem;
+    font-weight: 500;
+    cursor: pointer;
+
+    &:hover {
+        opacity: 0.9;
+    }
+
+
+}

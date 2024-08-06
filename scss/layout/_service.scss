@@ -1,0 +1,116 @@
+@use "../base";
+@use "../abstracts";
+.service {
+    padding: 56px 0;
+    margin-top: 50px;
+
+    @include abstracts.breakpoint(md) {
+        padding-bottom: 0;
+    } 
+
+    &-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__heading {
+        margin-top: 12px;
+        width: 520px;
+
+        @include abstracts.breakpoint(md) {
+            font-size: 3rem;
+            line-height: 1.33;
+            width: 281px;
+        }
+    }
+}
+
+.service-chevron {
+    display: flex;
+    align-items: center;
+    gap: 17px;
+
+    &-icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 54px;
+        height: 54px;
+        border-radius: 50%;
+        background-color: #e2eddf;
+    }
+
+    @include abstracts.breakpoint(md) {
+        display: none;
+    }
+}
+
+.service__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+
+    @include abstracts.breakpoint(md) {
+        grid-template-columns: 1fr;
+    }
+}
+
+.service-item {
+    margin-top: 76px;
+    border-radius: 20px;
+    overflow: hidden;
+
+    @include abstracts.breakpoint(md) {
+        + .service-item {
+            margin-top: 15px;
+        }
+    }
+
+    &:hover {
+        box-shadow: -6px 9px 64px -4px rgba(118, 118, 118, 0.25);
+    }
+
+    &:hover &__info {
+        padding: 24px 18px;
+    }
+
+    &__images {
+        width: 370px;
+        height: 318px;
+        flex-shrink: 0;
+        overflow: hidden;
+    }
+
+    &__img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: scale 0.3s linear;
+    }
+
+    &:hover &__img {
+        scale: 1.1;
+    }
+
+    &__info {
+        padding: 24px 0;
+        transition: padding 0.3s linear;
+    }
+
+    &__title {
+        color: var(--primary-color);
+        font-size: 2.2rem;
+        font-weight: 600;
+        line-height: 1;
+    }
+
+    &__desc {
+        width: 268px;
+        margin-top: 18px;
+        color: #7d8188;
+        font-size: 1.4rem;
+        font-weight: 500;
+        line-height: 1.71;
+    }
+}

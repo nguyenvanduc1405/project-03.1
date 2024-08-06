@@ -1,0 +1,142 @@
+@use "../base";
+@use "../abstracts" as ab;
+
+.blog {
+    padding: 54px 0;
+    margin-top: 80px;
+
+    @include ab.breakpoint(md) {
+        padding: 25px 0;
+        margin-top: 25px;
+    }
+
+    &__desc,
+    &__heading {
+        align-self: center;
+        grid-row: 2 / 3;
+
+        @include ab.breakpoint(md) {
+            max-width: 278px;
+            grid-row: auto;
+        }
+    }
+
+    &__heading {
+        margin-top: 10px;
+
+        @include ab.breakpoint(md) {
+            margin-top: 20px;
+            font-size: 3rem;
+            line-height: 1.33;
+        }
+    }
+
+    &__desc {
+        margin-left: 160px;
+        width: 409px;
+        margin-top: 12px;
+        @include ab.breakpoint(md) {
+            margin-left: 0;
+        }
+    }
+
+    &__list {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: 30px;
+        margin-top: 90px;
+
+        @include ab.breakpoint(md) {
+            margin-top: 38px;
+            grid-template-columns: 1fr;
+            column-gap: 0;
+            row-gap: 52px;
+        }
+    }
+}
+
+.blog-top {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    @include ab.breakpoint(md) {
+        grid-template-columns: 1fr;
+    }
+}
+
+.blog-item {
+    overflow: hidden;
+    border-radius: 40px 40px 20px 20px;
+    &:hover {
+        box-shadow: 0px 12px 74px 0px rgba(91, 91, 91, 0.25);
+    }
+
+    &__images {
+        min-width: 360px;
+        height: 317px;
+        overflow: hidden;
+    }
+
+    &__img {
+        width: 100%;
+        height: 100%;
+        border-radius: 40px 40px 0px 0px;
+        transition: scale 0.3s ease-in;
+    }
+
+    &:hover &__img {
+        scale: 1.1;
+    }
+
+    &__info {
+        padding: 26px 14px 12px 0;
+        border-radius: 0px 0px 20px 20px;
+        transition: padding 0.3s ease-in;
+    }
+
+    &:hover &__info {
+        padding: 26px 30px 12px;
+    }
+
+    &__base {
+        width: 107px;
+        height: 26px;
+        border-radius: 999px;
+        background: #e2eddf;
+        color: #000;
+        text-align: center;
+        font-size: 1rem;
+        font-weight: 500;
+        line-height: 1.2;
+    }
+
+    &:hover &__base {
+        background: #143c3c;
+        color: #fff;
+    }
+
+    &__desc {
+        margin-top: 13px;
+        color: #143c3c;
+        font-size: 1.8rem;
+        font-weight: 600;
+        line-height: 1.66;
+    }
+
+    &__separate {
+        margin-top: 38px;
+        width: 100%;
+        height: 1px;
+        background: #c4c4c4;
+    }
+
+    &__time {
+        display: block;
+        text-align: right;
+        margin-top: 16px;
+        color: #575d5e;
+        font-size: 1rem;
+        font-weight: 500;
+        line-height: 1.2;
+    }
+}

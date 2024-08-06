@@ -1,0 +1,163 @@
+@use "../base";
+@use "../abstracts" as ab;
+.process {
+    padding: 50px 0;
+    margin-top: 15px;
+
+    @include ab.breakpoint(md) {
+        padding: 25px;
+        margin-top: 0;
+    }
+
+    &__heading {
+        margin-top: 20px;
+        width: 520px;
+
+        @include ab.breakpoint(md) {
+            margin-top: 16px;
+            width: 298px;
+            font-size: 3rem;
+            line-height: 1.33;
+        }
+    }
+
+    &__list {
+        margin-top: 81px;
+
+        @include ab.breakpoint(md) {
+            margin-top: 59px;
+        }
+    }
+}
+
+.process__inner {
+    display: flex;
+    align-items: center;
+}
+
+.process-item {
+    display: flex;
+    align-items: center;
+    gap: 175px;
+    position: relative;
+    padding: 53px 20px 46px;
+    border-radius: 33px;
+    cursor: pointer;
+    transition: background 0.3s ease-out;
+    border-bottom: 1px solid rgb(131, 161, 125);
+
+    @include ab.breakpoint(md) {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0;
+    }
+
+    &:nth-child(2) &__desc {
+        margin-left: -65px;
+
+        @include ab.breakpoint(md) {
+            margin-left: 0;
+        }
+    }
+
+    &:hover {
+        background: #e2eddf;
+    }
+
+    + .process-item {
+        margin-top: 15px;
+
+        @include ab.breakpoint(md) {
+            margin-top: 0;
+        }
+    }
+
+    &::after {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        content: url(../img/process-img.svg);
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s ease-out, visibility 0.3s ease-out;
+
+        @include ab.breakpoint(md) {
+            display: none;
+        }
+    }
+
+    &:hover::after {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    &__heading {
+        color: #143c3c;
+        font-size: 7.2rem;
+        font-weight: 600;
+        line-height: 0.72;
+
+        @include ab.breakpoint(md) {
+            font-size: 5rem;
+            line-height: 1.04;
+        }
+    }
+
+    &__cta {
+        margin-left: 64px;
+
+        @include ab.breakpoint(md) {
+            margin-left: 9px;
+        }
+    }
+
+    &__title {
+        color: var(--primary-color);
+        font-size: 2.2rem;
+        font-weight: 600;
+        line-height: 1;
+
+        @include ab.breakpoint(md) {
+            font-size: 2.2rem;
+            line-height: 1;
+        }
+    }
+
+    &__more {
+        display: inline-block;
+        margin-top: 22px;
+        color: #575d5e;
+        font-size: 1.8rem;
+        line-height: 1;
+        text-decoration: underline;
+
+        @include ab.breakpoint(md) {
+            font-size: 1.8rem;
+            line-height: 1;
+            display: none;
+        }
+    }
+
+    &:hover &__more {
+        @include ab.breakpoint(md) {
+            display: block;
+        }
+    }
+
+    &__desc {
+        width: 572px;
+        color: #7d8188;
+        font-size: 1.8rem;
+        font-weight: 500;
+        line-height: 1.55;
+        transition: opacity 0.3s ease-out, visibility 0.3s ease-out;
+
+        @include ab.breakpoint(md) {
+            width: 100%;
+            font-size: 1.4rem;
+            line-height: 2;
+            margin-left: 0;
+            margin-top: 22px;
+        }
+    }
+}

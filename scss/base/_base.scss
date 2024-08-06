@@ -1,0 +1,88 @@
+*,
+::before,
+::after {
+    box-sizing: border-box;
+}
+
+:root {
+    --heading-font: "Public Sans", sans-serif;
+    --primary-color: #152427;
+    --btn-color: #143c3c;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-size: 1.6rem;
+    font-family: "Poppins", sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button,
+select,
+textarea,
+input {
+    font-family: inherit;
+    color: inherit;
+}
+
+button {
+    background-color: transparent;
+    border: none;
+    outline: none;
+}
+
+input {
+    border: none;
+    outline: none;
+}
+
+.section-heading {
+    color: var(--primary-color);
+    font-size: 4.2rem;
+    font-weight: 600;
+    line-height: 1.23;
+}
+
+.section-desc {
+    color: #7d8188;
+    font-size: 1.6rem;
+    font-weight: 500;
+    line-height: 1.62;
+}
+
+.title {
+    display: flex;
+    align-items: center;
+    color: var(--primary-color);
+    font-size: 1.6rem;
+    font-weight: 500;
+    line-height: 1.62;
+
+    &::before {
+        content: "";
+        display: inline-block;
+        width: 25px;
+        height: 1px;
+        background-color: var(--primary-color);
+        margin-right: 21px;
+    }
+}
+
+.section-heading__flat::after {
+    content: "";
+    display: inline-block;
+    width: 66px;
+    height: 2px;
+    margin-bottom: 6px;
+    background-color: var(--primary-color);
+    margin-left: 15px;
+}
+
+
